@@ -1,3 +1,7 @@
+import 'dart:ffi';
+
+import 'package:eduset/constants.dart';
+import 'package:eduset/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +15,16 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  String userName = "";
+  String passWord = "";
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/iron man2.png"),fit: BoxFit.cover)
-      ),
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(image: AssetImage("assets/images/iron man2.png"),fit: BoxFit.cover)
+      // ),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -26,7 +34,7 @@ class _LoginState extends State<Login> {
           title: Text("Login",style: TextStyle(
           ),),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         body: Center(
           child: SingleChildScrollView(
             child: Center(
@@ -40,6 +48,16 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                             label: Text("Username",style: TextStyle(),)),
+                        onChanged: (username){
+                          setState(() {
+                            userName = username;
+                          });
+                        },
+                        onFieldSubmitted: (username){
+                          setState(() {
+                            userName = username;
+                          });
+                        },
                       ),
                     ),
                     Container(
@@ -48,6 +66,14 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                             label: Text("Password",style: TextStyle())),
+                        onChanged: (password){
+                          setState(() {
+                            passWord = password;
+                          });
+                        },
+                        onFieldSubmitted: (password){
+                          passWord = password;
+                        },
                       ),
                     ),
                     ElevatedButton(
@@ -56,24 +82,14 @@ class _LoginState extends State<Login> {
                             shape: MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),topRight: Radius.circular(15))))
                         ),
                         onPressed: (){
-                          showDialog(barrierDismissible: false,
-                              context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                backgroundColor: Colors.orange[300],
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),
-                                    topRight: Radius.circular(15))),
-                                title: Text("Sure to Continue"),
-                                content: Text("Check All details filled"),
-                                actions: <Widget>[
-                                  ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp(),));
-                                      },
-                                      child: const Text("Sure",style: TextStyle(
-                                      ),))
-                                ],
-                              )
-                          );
+                          print("UserName : $userName\nPassWord : $passWord");
+                          if(userName == AppConstant.userName && passWord==AppConstant.passWord){
+                            showPopup(true);
+                          }
+                          else{
+                            showPopup(false);
+                          }
+
                         }, child: Text("Login",style: TextStyle(color: Colors.red.shade300,letterSpacing: 0.5),))
                   ],
                 ),
@@ -82,6 +98,33 @@ class _LoginState extends State<Login> {
           ),
         ),
       ),
+    );
+  }
+
+  showPopup(bool flag){
+    return showDialog(barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          backgroundColor: Colors.orange[300],
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),
+              topRight: Radius.circular(15))),
+          title: Text("Login"),
+          content: (flag==true)?Text("Login Succeeful"):Text("Login Failed. Try Again"),
+          actions: <Widget>[
+            ElevatedButton(
+                onPressed: () {
+                  if(flag==true) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen(),));
+                  }
+                  else{
+                    Navigator.pop(context);
+                  }
+                },
+                child: const Text("Okay",style: TextStyle(
+                ),))
+          ],
+        )
     );
   }
 }

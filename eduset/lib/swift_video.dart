@@ -1,15 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class Flutter_video extends StatefulWidget {
-  const Flutter_video({Key? key}) : super(key: key);
+class Swift_video extends StatefulWidget {
+  const Swift_video({Key? key}) : super(key: key);
 
   @override
-  State<Flutter_video> createState() => _Flutter_videoState();
+  State<Swift_video> createState() => _Swift_videoState();
 }
 
-class _Flutter_videoState extends State<Flutter_video> {
+class _Swift_videoState extends State<Swift_video> {
   late YoutubePlayerController  _controller;
   late YoutubeMetaData _videoMetaData;
   double _volume = 100;
@@ -17,17 +17,14 @@ class _Flutter_videoState extends State<Flutter_video> {
   bool _isPlayerReady = false;
 
   final List<String> _ids =[
-    'HtgsoZieoeM',
-    'Si5XJ_IocEs',
-    'VdkRy3yZiPo',
-    'DnC7eT-vh1k',
+    '6PxwlFLhXog',
   ];
 
   @override
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-        initialVideoId: _ids.first,
+      initialVideoId: _ids.first,
       flags: YoutubePlayerFlags(
         autoPlay: true,
         captionLanguage: "en-us",
@@ -61,15 +58,15 @@ class _Flutter_videoState extends State<Flutter_video> {
                   width: 8.0,
                 ),
                 Expanded(
-                    child: Text(
-                      _controller.metadata.title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                  child: Text(
+                    _controller.metadata.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
                     ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
                 ),
               ],
               onReady: (){
@@ -82,35 +79,34 @@ class _Flutter_videoState extends State<Flutter_video> {
             ),
             builder: (context, player){
               return Scaffold(
-                appBar: AppBar(),
-                body: Column(
-                  children: [
-                    player,
-                    RichText(
-                      text: TextSpan(
-                      text: _controller.metadata.title,
-                      style: const TextStyle(
-                        color: Colors.blueAccent,
-                        fontWeight: FontWeight.w300
-                      ),
-                        children: [
-                          TextSpan(
-                            text: "\n Duration : ${_controller.metadata.duration}",
+                  appBar: AppBar(),
+                  body: Column(
+                    children: [
+                      player,
+                      RichText(
+                        text: TextSpan(
+                            text: _controller.metadata.title,
                             style: const TextStyle(
-                              color: Colors.blueAccent,
-                              fontWeight: FontWeight.w300
-                            )
-                          )
-                        ]
-                    ),
-                    ),
-                  ],
-                )
+                                color: Colors.blueAccent,
+                                fontWeight: FontWeight.w300
+                            ),
+                            children: [
+                              TextSpan(
+                                  text: "\n Duration : ${_controller.metadata.duration}",
+                                  style: const TextStyle(
+                                      color: Colors.blueAccent,
+                                      fontWeight: FontWeight.w300
+                                  )
+                              )
+                            ]
+                        ),
+                      ),
+                    ],
+                  )
               );
             }
-            ),
+        ),
       ),
     );
   }
 }
-//flutterwindowmanager for functions like avoiding scrren recordings and screenshots

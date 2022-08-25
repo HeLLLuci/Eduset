@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
+import 'AD_video.dart';
 import 'main.dart';
 
 class Adc extends StatefulWidget {
@@ -119,22 +120,27 @@ class _AdcState extends State<Adc> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 28.0),
-                      child: Container(
-                        padding: EdgeInsets.only(
-                            top: 12.5, bottom: 13.5, left: 20.5, right: 14.5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16.0),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 16.0,
-                                offset: Offset(0, 4)),
-                          ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AD_video()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 12.5, bottom: 13.5, left: 20.5, right: 14.5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16.0),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 16.0,
+                                  offset: Offset(0, 4)),
+                            ],
+                          ),
+                          width: 60.0,
+                          height: 60.0,
+                          child: Icon(UniconsLine.play),
                         ),
-                        width: 60.0,
-                        height: 60.0,
-                        child: Icon(UniconsLine.play),
                       ),
                     )
                   ],
