@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
+import 'home_screen.dart';
 import 'main.dart';
 
 class Flutter extends StatefulWidget {
@@ -80,7 +81,7 @@ class _FlutterState extends State<Flutter> {
                                       ),
                                       GestureDetector(
                                         onTap: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                                         },
                                         child: Container(
                                           height: 40,

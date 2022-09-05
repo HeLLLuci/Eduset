@@ -2,6 +2,7 @@ import 'package:eduset/Figma_course.dart';
 import 'package:eduset/flutter_course_details.dart';
 import 'package:eduset/protopie_details.dart';
 import 'package:eduset/swift_ui_course.dart';
+import 'package:eduset/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
@@ -44,13 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // return HomeScreen();
-    return Login();
+    return Welcome();
   }
 }
-
-
-//Add fake container of bigger size than row containers then might shadow will appear
-// create A drawer for tommorrow
-//always add opacity to background image so that widgets will appear more good
-// reduce gaps in cards so that they appear in screen same time
-// add shadow to bottom cards that are remaining

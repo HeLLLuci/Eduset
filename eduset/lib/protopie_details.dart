@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 import 'course_video_protopie.dart';
+import 'home_screen.dart';
 import 'main.dart';
 
 class Protopie_detail extends StatefulWidget {
@@ -78,7 +79,7 @@ class _Protopie_detailState extends State<Protopie_detail> {
                                       ),
                                       GestureDetector(
                                         onTap: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                                         },
                                         child: Container(
                                           height: 40,

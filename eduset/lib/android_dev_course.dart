@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 import 'AD_video.dart';
+import 'home_screen.dart';
 import 'main.dart';
 
 class Adc extends StatefulWidget {
@@ -78,7 +79,7 @@ class _AdcState extends State<Adc> {
                                       ),
                                       GestureDetector(
                                         onTap: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                                         },
                                         child: Container(
                                           height: 40,

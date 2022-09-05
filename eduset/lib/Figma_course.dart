@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 import 'course_video_flutter.dart';
+import 'home_screen.dart';
 import 'main.dart';
 
 class Figmac extends StatefulWidget {
@@ -78,7 +79,7 @@ class _FigmacState extends State<Figmac> {
                                       ),
                                       GestureDetector(
                                         onTap: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                                         },
                                         child: Container(
                                           height: 40,
