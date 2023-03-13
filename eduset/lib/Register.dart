@@ -1,3 +1,4 @@
+import 'package:eduset/database/mysql.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  var db = new Mysql();
   final formkey = GlobalKey<FormState>();
   final formkey1 = GlobalKey<FormState>();
   bool _isVisible = true;

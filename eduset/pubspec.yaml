@@ -36,10 +36,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   unicons: ^2.1.0
   youtube_player_flutter: ^8.1.0
+  flutter_launcher_icons: ^0.10.0
+  mysql1: ^0.20.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+flutter_icons:
+  image_path: "assets/images/online-learning.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

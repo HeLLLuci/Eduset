@@ -260,7 +260,7 @@ class _Protopie_detailState extends State<Protopie_detail> {
                     Container(
                       alignment: Alignment.topLeft,
                       margin: EdgeInsets.only(left: 10),
-                      child: Text("What is Flutter ?",style: TextStyle(
+                      child: Text("What is Protopie ?",style: TextStyle(
                           fontWeight: FontWeight.bold,fontSize: 50,fontFamily: "Caviar"
                       ),
                       ),//change font of what is flutter
@@ -271,9 +271,10 @@ class _Protopie_detailState extends State<Protopie_detail> {
                     Container(
                       margin: EdgeInsets.only(left: 10,bottom: 20),
                       child: Text(
-                        "Flutter is a powerful language packed with a powerful mobile framework that can be used in both iOS and "
-                            "Android applications. Flutter is often used with DART, "
-                            "which is an object-oriented programming language by Google.",style: TextStyle(
+                        "ProtoPie is the easiest tool to turn your interaction design ideas into realistic prototypes. "
+                            "Create tomorrow’s digital experiences and test them on real displays, "
+                            "from smartphones and desktops to tv and car dashboard screens."
+                            " Make interaction design the epicenter of your workflow with ProtoPie.",style: TextStyle(
                           fontSize: 20
                       ),
                       ),//change font family
