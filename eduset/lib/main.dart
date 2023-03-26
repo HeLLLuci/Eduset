@@ -5,6 +5,7 @@ import 'package:eduset/swift_ui_course.dart';
 import 'package:eduset/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'Register.dart';
 import 'android_dev_course.dart';
@@ -12,6 +13,10 @@ import 'home_screen.dart';
 import 'login.dart';
 
 void main() {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

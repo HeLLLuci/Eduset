@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "689535022654",
+    "project_id": "eduset-17697",
+    "storage_bucket": "eduset-17697.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689535022654:android:4aae8616faf84eab49436f",
+        "android_client_info": {
+          "package_name": "com.example.eduset"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689535022654-3bf2gs4t5557kiqvqe3re2p73qrtv8nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx-QZ3kIlY02zeE_XIB52WbkVftYHofpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689535022654-3bf2gs4t5557kiqvqe3re2p73qrtv8nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

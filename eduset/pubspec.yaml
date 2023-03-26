@@ -38,6 +38,11 @@ dependencies:
   youtube_player_flutter: ^8.1.0
   flutter_launcher_icons: ^0.10.0
   mysql1: ^0.20.0
+  firebase_core: ^2.8.0
+  firebase_auth: ^4.3.0
+  cloud_firestore: ^4.4.5
+  firebase_storage: ^11.0.16
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:
